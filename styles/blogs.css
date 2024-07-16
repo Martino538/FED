@@ -1,0 +1,144 @@
+main{
+    top: 6em;
+}
+
+main h2{
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--main-color);
+}
+main h2 em{
+    color: var(--cta-main-color);
+    font-style: normal;
+}
+main form{
+    display: grid;
+    gap: 0.5em;
+    margin-bottom: 3em;
+}
+main form h2{
+    word-spacing: 5em;
+    margin: 0.7em 0;
+}
+
+main form input::placeholder{
+    color: var(--input-text-color);
+}
+
+main form button{
+    color: var(--cta-main-color);
+    background-color: var(--nav-link-text);
+    text-align: left;
+    font-size: 0.7em;
+}
+main form input, main form button{
+    border-radius: 2em;
+    border: 2px solid black;
+    padding: 0.7em 1.5em;
+    font-family: var(--title-font);
+    font-size: 0.8em;
+}
+
+
+main section ul{
+    display: grid;
+    gap: 1em;
+}
+
+main section ul{
+    margin: 0;
+    padding: 0;
+}
+
+main section ul li{
+    list-style-type: none;
+    padding: .7em;
+    border: .3em solid var(--color-background);
+    border-radius: .6em;
+    font-family: 'DunkinSans-Display', sans-serif;
+    margin: 0;
+}
+
+main section ul li a {
+    text-decoration: none;
+    color: var(--text-brown);
+}
+
+main section ul li a figure{
+    margin: 0;
+    width: 100%;
+    display: flex;
+    height: 18em;
+}
+
+main section ul li a figure img{
+    border-radius: 1em;
+    height: 100%;
+    object-fit: cover;
+}
+
+main section ul li a h3{
+    font-size: .6em;
+    background-color: var(--cta-main-color);
+    color: var(--nav-link-text);
+    width: fit-content;
+    padding: .5em 1em;
+    border-radius: 1.5em;
+    text-transform: uppercase;
+}
+main > section{
+    margin-bottom: 7em;
+}
+
+
+@media (min-width: 30em){
+    main{
+        padding: 2em;
+        top: 0;
+    }
+    main form{
+        grid-template-columns: 3fr 3fr 3fr 3fr;
+    }
+    main form h2{
+        grid-row-start: 1;
+        grid-row-end: 3;
+        margin: 0;
+        text-align: left;
+    }
+    main form input{
+        grid-row-start: 2;
+        grid-column-start: 2;
+        border-color: var(--main-color);
+    }
+    main form input::placeholder{
+        color: var(--main-color);
+    }
+
+    main form button:first-of-type, main form button:last-of-type{
+        grid-row-start: 2;
+        grid-column-start: 3;
+        color: white;
+        border-color: var(--cta-main-color);
+    }
+    main form button:last-of-type{
+        grid-column-start: 4;
+    }
+
+    main form button{
+        background-color: var(--cta-main-color);
+    }
+
+    main section ul {
+        grid-template-columns: 3fr 3fr 3fr;
+    }
+    main section ul li{
+        min-width: 0;
+    }
+    main section ul li a p{
+        word-break: break-word;
+    }
+    main > section{
+        margin-bottom: 1.5em;
+    }
+
+}

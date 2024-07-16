@@ -1,0 +1,394 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+
+*, *::after, *::before {
+	box-sizing:border-box;  
+}
+
+button, summary {
+	cursor: pointer;
+}
+
+img{
+	width: 100%;
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.main-link{
+    flex-basis: 100%;
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 1em;
+    border-radius: 5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1em;
+    color: var(--nav-link-text);
+}
+
+@font-face {
+	font-family: "DunkinSans-Book";
+	src: url("../fonts/DunkinSans-Book.otf") format("opentype");
+}
+@font-face {
+	font-family: "DunkinSans-Display";
+	src: url("../fonts/DunkinSans-Display.otf") format("opentype");
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	--color-text:#111;
+	--nav-link-text: #ffffff;
+	--footer-text: #c1c1c1;
+	--text-brown: #512d00;
+
+	--cta-main-color: #f20c90;
+	--cta-secondary-main-color: #f950ad;
+
+	--color-background:#eee;
+	--main-color: #ff6e0c;
+	--nav-link-color: #ee4c25;
+	--input-text-color: #f986c8;
+	--main-section-color: #F5F5F5;
+	--coffee-color: #ddbd8e;
+	--ajax-blue: #99D6EA;
+	--border-grey: #f1f1f1;
+	--section-grey: #f9f9f9;
+
+	--title-font: 'DunkinSans-Display', sans-serif;
+	--main-font: 'DunkinSans-Book', sans-serif;
+}
+
+body{
+	font-family: var(--main-font);
+	margin: 0;
+}
+
+h1, h2, h3, span, .main-link, button{
+	font-family: var(--title-font);
+	text-transform: uppercase;
+}
+
+h2{
+	margin: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+/* - Header - */
+
+header{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 1px solid rgb(235, 235, 235);
+	position: fixed;
+	top: 0;
+    z-index: 100;
+    background-color: var(--nav-link-text);
+    width: 100%;
+}
+
+header > p{
+	width: 100%;
+	order: -100;
+	text-align: center;
+	font-size: 0.7em;
+	background-color: var(--main-color);
+	color: var(--color-background);
+	margin: 0;
+	padding: 1em;
+}
+
+header button{
+	margin: 1.1em;
+	padding: .5em 1.1em;
+	border-radius: 1em;
+	border: none;
+}
+
+header button:first-of-type{
+	order: -50;
+	padding-top: 0.4em;
+}
+
+header a img{
+	width: 7em;
+}
+
+header nav {
+	font-family: var(--title-font);
+}
+header nav button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header nav button img{
+	width: 1em;
+}
+
+header nav ul{
+	background-color: var(--nav-link-text);
+	margin: 0;
+	padding: 0 1em 0;
+	list-style-type: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 5.9em;
+	bottom: 0;
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+    text-align: center;
+    gap: 1em;
+	transform:translateY(100%);
+	transition: .3s ease;
+	z-index: 100;
+}
+
+nav.toonMenu ul{
+	transform: translateY(0);
+}
+
+header nav li a{
+	color: var(--text-brown);
+	font-size: 1.8em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+/* - Main - */
+
+main{
+	position: relative;
+	top: 5em;
+	padding: 0 1em;
+}
+
+main span{
+    text-transform: uppercase;
+    flex-basis: 100%;
+    font-size: 2em;
+    line-height: 0.9em;
+}
+
+
+/* - Footer - */
+
+footer{
+	position: relative;
+	top: 5em;
+}
+
+footer div{
+    background-color: var(--main-color);
+	position: relative;
+	height: 24em;
+}
+
+footer div figure{
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+    left: calc(50% - 9em/2);
+    top: -4.5em;
+}
+
+footer div figure img{
+	background-color: var(--nav-link-text);
+	border-radius: 50%;
+	margin: .5em;
+	display: block;
+    width: 8em;
+    height: 8em;
+    transform: rotate(-20deg);
+    box-shadow: 0.1em 0.2em 0.4em #00000057;
+}
+
+footer div nav:first-of-type{
+	position: absolute;
+    bottom: 4em;
+}
+footer div nav:last-of-type{
+	position: absolute;
+    bottom: 0;
+    left: calc(50% - 5em);
+    width: 10em;
+}
+
+footer div nav ul{
+    padding: 0;
+    margin: 0;
+}
+
+footer div nav ul li{
+	list-style-type: none;
+}
+  
+footer div nav:first-of-type ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+  
+footer div nav:first-of-type ul li{
+	flex-basis: 100%;
+	text-align: center;
+	background-color: var(--nav-link-color);
+	padding: 1em;
+	border-radius: 5em;
+	margin: .2em 1em;
+}
+  
+footer div nav:first-of-type ul li a{
+	background-color: transparent;
+}
+
+footer div nav:last-of-type{
+	padding: 1em;
+}
+  
+footer div nav:last-of-type ul{
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+}
+
+footer div nav:last-of-type ul li{
+	list-style-type: none;
+    width: 2em;
+    background-color: var(--nav-link-text);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	margin: 0;
+}
+  
+footer div nav:last-of-type ul li a img{
+	height: .8em;
+}
+  
+footer > nav{
+	padding: 0.2em;
+}
+  
+footer > nav ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 1em;
+    gap: 1em;
+	margin: 0;
+}
+  
+footer > nav ul li{
+	list-style-type: none;
+	font-size: .8em;
+}
+  
+footer > nav ul li a, footer span{
+	color: var(--footer-text);
+	font-size: .8em;
+}
+  
+footer > nav ul li a{
+	text-decoration: none;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+@media (min-width: 48em){
+	header{
+		position: unset;
+	}	
+	
+	main, footer{
+		top: 0;
+	}
+
+	footer div{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		height: 4em;
+	}
+
+	footer div figure{
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		display: flex;
+		position: unset;
+	}
+
+	footer div nav:first-of-type{
+		display: flex;
+		flex-wrap: nowrap;
+		position: unset;
+	}
+	footer div nav:first-of-type ul li{
+		display: flex;
+		flex-basis: unset;
+		padding: 0;
+		background-color: transparent;
+		margin: 0;
+	}
+	footer div nav:last-of-type{
+		position: unset;
+	}
+	footer div figure img{
+		width: 6em;
+		height: 6em;
+	}
+}
+
+@media (min-width: 64em){
+	header > a{
+		order: -10;
+	}
+
+	header button:first-of-type{
+		order: -5;
+	}
+
+	header nav{
+		order: -8;
+	}
+
+    header nav ul{
+        position: static;
+        transform: none;
+		flex-direction: unset;
+		transition: none;
+    }
+
+	header nav ul li a{
+		font-size: 1em;
+	}
+
+	header nav button{
+		display: none;
+	}
+
+
+}
